@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <time.h>
+int fibonacci(int n){
+    int ans;
+    if (n==1){
+        ans=0;
+    }
+    else if (n==2){
+        ans=1;
+    }
+    else{
+        ans=fibonacci(n-1)+fibonacci(n-2);
+    }
+    return ans;
+}
+int main() {
+    // Write C code here
+    double time_spent=0.0;
+    clock_t begin=clock();
+    for (int i=1;i<=100;i++){
+        int a=fibonacci(i);
+        printf("%d\n",a);
+    }
+    clock_t end=clock();
+    time_spent+=(double)(end-begin);
+    printf("Execution time: %d",time_spent);
+    
+    return 0;
+}
